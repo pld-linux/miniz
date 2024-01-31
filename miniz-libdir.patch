@@ -1,13 +1,12 @@
---- miniz-2.1.0/CMakeLists.txt.orig	2019-04-11 02:35:18.000000000 +0200
-+++ miniz-2.1.0/CMakeLists.txt	2020-11-22 21:14:16.163641574 +0100
-@@ -45,8 +45,8 @@
- # target_link_libraries(miniz_tester miniz)
+--- miniz-3.0.2/miniz.pc.in.orig	2023-01-15 12:55:58.000000000 +0100
++++ miniz-3.0.2/miniz.pc.in	2024-01-30 22:01:14.605053896 +0100
+@@ -1,7 +1,7 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@
+-includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@/@PROJECT_NAME@
++libdir=@CMAKE_INSTALL_FULL_LIBDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@/@PROJECT_NAME@
  
- install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Targets
--    ARCHIVE  DESTINATION lib
--    LIBRARY DESTINATION lib
-+    ARCHIVE  DESTINATION lib${LIB_SUFFIX}
-+    LIBRARY DESTINATION lib${LIB_SUFFIX}
-     )
- file(GLOB INSTALL_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
- install(FILES ${INSTALL_HEADERS} DESTINATION include/${PROJECT_NAME})
+ Name: @PROJECT_NAME@
+ Description: @PROJECT_DESCRIPTION@
