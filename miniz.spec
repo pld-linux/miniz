@@ -1,16 +1,16 @@
 Summary:	Implementation of the zlib and deflate compressed data format
 Summary(pl.UTF-8):	Implementacja formatu danych z kompresją zlib i deflate
 Name:		miniz
-Version:	3.0.2
+Version:	3.1.0
 Release:	1
 License:	MIT
 Group:		Libraries
 #Source0Download: https://github.com/richgel999/miniz/releases
 Source0:	https://github.com/richgel999/miniz/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	a2fc179d5a5bcdcac42039829172dfc3
+# Source0-md5:	5e42fde18fa968211d3b7bf6dadb843a
 Patch0:		%{name}-libdir.patch
 URL:		https://github.com/richgel999/miniz
-BuildRequires:	cmake >= 3.0
+BuildRequires:	cmake >= 3.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -76,11 +76,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog.md LICENSE readme.md
 %attr(755,root,root) %{_libdir}/libminiz.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libminiz.so.3
+%ghost %{_libdir}/libminiz.so.3
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libminiz.so
+%{_libdir}/libminiz.so
 %{_includedir}/miniz
 %{_libdir}/cmake/miniz
 %{_pkgconfigdir}/miniz.pc
